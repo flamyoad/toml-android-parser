@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="converter.js"></script>
+</head>
+<body>
+
+<h1>Convert to be used in libs.versions.toml</h1>
+<h2>How to use</h2>
+<b>Input the dependency</b><p>implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1-Beta")</p>
+<b>Use in libs.versions.toml</b><p>coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }</p>
+<b>Use in build.gradle</b><p>implementation(libs.coroutines.android)</p>
+
+<div class="main-content">
+    <label>Input the library here</label>
+    <br/>
+    <textarea id="library-input" rows="4" cols="50" placeholder="implementation(&quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1-Beta&quot;)"></textarea>
+    <br/>
+    <input type="button" style="padding: 10px 40px" value="Convert" onclick="parse()"/>
+    <br/>
+    <br/>
+    <label>Use in libs.versions.toml</label>
+    <textarea id="toml" rows="6" cols="50"></textarea>
+    <br/>
+    <label>Use in build.gradle</label>
+    <textarea id="build-gradle" rows="6" cols="50"></textarea>
+</div>
+</body>
+</html>
